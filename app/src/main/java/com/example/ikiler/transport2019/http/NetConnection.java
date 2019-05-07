@@ -41,8 +41,6 @@ public class NetConnection {
 
 
     }
-
-
     public interface CallBack{
         void success(String result);
     }
