@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ikiler.transport2019.http.NetConnection;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
