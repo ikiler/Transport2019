@@ -19,20 +19,26 @@ public class NetConnection {
 
     static OkHttpClient client = new OkHttpClient();
 
-    public static void post(String url,String json, CallBack callBack){
+    public static void post(String url, String json, final CallBack callBack){
 
-        Request request2 = new Request.Builder()
+        final Request request2 = new Request.Builder()
                 .url(url)
                 .post(RequestBody.create(MediaType.parse("application/json"),json))
                 .build();
-        try {
-            Response response = client.newCall(request2).execute();
-            if (response.isSuccessful()){
-                callBack.success(response.body().string());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = client.newCall(request2).execute();
+                    if (response.isSuccessful()){
+                        callBack.success(response.body().string());
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        }).start();
+
 
     }
 
