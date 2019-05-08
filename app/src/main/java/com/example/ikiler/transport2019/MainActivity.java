@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             startActivity(new Intent(MainActivity.this,EX_1.class));
         } else if (id == R.id.nav_gallery) {
-            Toast.makeText(MainActivity.this,"xxxxxxxxxxxxxxx",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this,EX_2.class));
 
         } else if (id == R.id.nav_slideshow) {
 

@@ -112,7 +112,6 @@ public class EX_1 extends AppCompatActivity {
                         NetConnection.post(url_save, json_save, new NetConnection.CallBack() {
                             @Override
                             public void success(List<String> results) {
-                                String url = "http://192.168.139.4:8890/type/jason/action/GetCarAccountBalance";
                                 String json = "{\"CarId\":"+sp.getSelectedItem().toString()+"}";
                                 json_sel.remove(0);
                                 json_sel.add(json);
