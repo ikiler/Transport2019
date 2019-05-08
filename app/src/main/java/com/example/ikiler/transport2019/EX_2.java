@@ -26,6 +26,7 @@ public class EX_2 extends AppCompatActivity {
         sp = findViewById(R.id.sp);
         sel = findViewById(R.id.sel);
         listView = findViewById(R.id.list);
+
         list.add("路口升序");
         list.add("路口降序");
         list.add("红灯升序");

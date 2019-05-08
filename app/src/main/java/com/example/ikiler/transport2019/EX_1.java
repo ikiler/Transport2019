@@ -30,8 +30,10 @@ public class EX_1 extends AppCompatActivity {
     private Button sel;
     private Button save;
     String[] car_id = {"1","2","3"};
-    List<String> urls = new ArrayList<String>();
-    List<String> url = new ArrayList<String>();
+    List<String> url_sel = new ArrayList<String>();
+    List<String> url_save = new ArrayList<String>();
+    List<String> json_sel = new ArrayList<String>();
+    List<String> json_save = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +47,11 @@ public class EX_1 extends AppCompatActivity {
         sp.setAdapter(arrayAdapter);
         String url1 = "http://192.168.139.4:8890/type/jason/action/GetCarAccountBalance";
         String url2 = "http://192.168.139.4:8890/type/jason/action/SetCarAccountRecharge";
-        urls.add(url1);
-        url.add(url2);
+        url_sel.add(url1);
+        url_save.add(url2);
         String json = "{\"CarId\":1}";
-        NetConnection.post(urls, json, new NetConnection.CallBack() {
+        json_sel.add(json);
+        NetConnection.post(url_sel, json_sel, new NetConnection.CallBack() {
             @Override
             public void success(List<String> results) {
                 try {
@@ -75,7 +78,9 @@ public class EX_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String json = "{\"CarId\":"+sp.getSelectedItem().toString()+"}";
-                NetConnection.post(urls, json, new NetConnection.CallBack() {
+                json_sel.remove(0);
+                json_sel.add(json);
+                NetConnection.post(url_sel, json_sel, new NetConnection.CallBack() {
                     @Override
                     public void success(List<String> results) {
                         try {
@@ -103,12 +108,15 @@ public class EX_1 extends AppCompatActivity {
                     else {
 
                         String json = "{\"CarId\":"+sp.getSelectedItem().toString()+",\"Money\":"+et.getText().toString()+"}";
-                        NetConnection.post(url, json, new NetConnection.CallBack() {
+                        json_save.add(json);
+                        NetConnection.post(url_save, json_save, new NetConnection.CallBack() {
                             @Override
                             public void success(List<String> results) {
                                 String url = "http://192.168.139.4:8890/type/jason/action/GetCarAccountBalance";
                                 String json = "{\"CarId\":"+sp.getSelectedItem().toString()+"}";
-                                NetConnection.post(urls, json, new NetConnection.CallBack() {
+                                json_sel.remove(0);
+                                json_sel.add(json);
+                                NetConnection.post(url_sel, json_sel, new NetConnection.CallBack() {
                                     @Override
                                     public void success(List<String> results) {
                                         try {
