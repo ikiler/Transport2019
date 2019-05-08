@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 public class EX_2 extends AppCompatActivity {
     private Spinner sp;
     private Button sel;
+    private ListView listView;
     List<String> list = new ArrayList<String>();
     List<Info> info = new ArrayList<Info>();
     @Override
@@ -23,6 +25,7 @@ public class EX_2 extends AppCompatActivity {
         setContentView(R.layout.activity_ex_2);
         sp = findViewById(R.id.sp);
         sel = findViewById(R.id.sel);
+        listView = findViewById(R.id.list);
         list.add("路口升序");
         list.add("路口降序");
         list.add("红灯升序");
