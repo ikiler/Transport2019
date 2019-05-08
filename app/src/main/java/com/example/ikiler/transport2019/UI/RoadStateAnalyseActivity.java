@@ -74,7 +74,10 @@ public class RoadStateAnalyseActivity extends AppCompatActivity {
         // y轴的数据集合
         BarDataSet barDataSet = new BarDataSet(yValues, "");
         ArrayList<BarDataSet> barDataSets = new ArrayList<BarDataSet>();
+        BarDataSet barDataSet2 = new BarDataSet(yValues, "");
+        ArrayList<BarDataSet> barDataSets2 = new ArrayList<BarDataSet>();
         barDataSets.add(barDataSet); // add the datasets
+        barDataSets.add(barDataSet2); // add the datasets
 
         BarData barData = new BarData(xValues, barDataSets);
 
