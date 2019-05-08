@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.ikiler.transport2019.UI.EX_3;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -86,9 +88,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,EX_1.class));
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent(MainActivity.this,EX_2.class));
-
         } else if (id == R.id.nav_slideshow) {
-
+            startActivity(new Intent(MainActivity.this,EX_3.class));
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
