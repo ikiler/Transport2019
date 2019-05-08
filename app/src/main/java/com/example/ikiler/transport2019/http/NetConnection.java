@@ -24,15 +24,15 @@ public class NetConnection {
     static OkHttpClient client = new OkHttpClient();
     static Handler handler = new Handler(Looper.getMainLooper());
 
-    public static void post(final List<String> urls, final String json, final CallBack callBack){
+    public static void post(final List<String> urls, final List<String> json, final CallBack callBack){
         final List<String> jsons = new ArrayList<>();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (String url:urls){
+                for (int i = 0; i<urls.size();i++){
                     final Request request2 = new Request.Builder()
-                            .url(url)
-                            .post(RequestBody.create(MediaType.parse("application/json"),json))
+                            .url(urls.get(i))
+                            .post(RequestBody.create(MediaType.parse("application/json"),json.get(i)))
                             .build();
                     try {
                         Response response = client.newCall(request2).execute();
