@@ -43,7 +43,12 @@ public class NetConnection {
                         e.printStackTrace();
                     }
                 }
-                callBack.success(jsons);
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        callBack.success(jsons);
+                    }
+                });
             }
         }).start();
     }

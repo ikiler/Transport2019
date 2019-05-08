@@ -1,5 +1,6 @@
 package com.example.ikiler.transport2019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            startActivity(new Intent(MainActivity.this,EX_1.class));
         } else if (id == R.id.nav_gallery) {
             Toast.makeText(MainActivity.this,"xxxxxxxxxxxxxxx",Toast.LENGTH_SHORT).show();
 

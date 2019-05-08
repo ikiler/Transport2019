@@ -22,5 +22,6 @@
         <activity android:name=".EX_1" />
         <activity android:name=".EX_2"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
