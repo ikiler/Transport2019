@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.ikiler.transport2019.UI.EX_3;
 import com.example.ikiler.transport2019.UI.EX_5;
 import com.example.ikiler.transport2019.UI.EX_7;
+import com.example.ikiler.transport2019.UI.EX_9;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             startActivity(new Intent(MainActivity.this,EX_7.class));
         } else if (id == R.id.nav_send) {
-
+            startActivity(new Intent(MainActivity.this,EX_9.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

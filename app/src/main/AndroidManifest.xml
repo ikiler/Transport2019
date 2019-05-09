@@ -28,6 +28,7 @@
         <activity android:name=".UI.EX_3" />
         <activity android:name=".UI.EX_5" />
         <activity android:name=".UI.EX_7" />
+        <activity android:name=".UI.EX_9"></activity>
     </application>
 
 </manifest>
