@@ -19,6 +19,7 @@ import com.example.ikiler.transport2019.UI.EX_3;
 import com.example.ikiler.transport2019.UI.EX_5;
 import com.example.ikiler.transport2019.UI.EX_7;
 import com.example.ikiler.transport2019.UI.EX_9;
+import com.example.ikiler.transport2019.UI.RoadStateAnalyseActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.a1:
-
+                startActivity(new Intent(MainActivity.this, RoadStateAnalyseActivity.class));
                 break;
             case R.id.a2:
 

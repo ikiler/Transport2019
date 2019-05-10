@@ -24,19 +24,19 @@ public class NetConnection {
     static OkHttpClient client = new OkHttpClient();
     static Handler handler = new Handler(Looper.getMainLooper());
 
-    public static void post(final List<String> urls, final List<String> json, final CallBack callBack){
+    public static void post(final List<String> urls, final List<String> json, final CallBack callBack) {
         final List<String> jsons = new ArrayList<>();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i<urls.size();i++){
+                for (int i = 0; i < urls.size(); i++) {
                     final Request request2 = new Request.Builder()
                             .url(urls.get(i))
-                            .post(RequestBody.create(MediaType.parse("application/json"),json.get(i)))
+                            .post(RequestBody.create(MediaType.parse("application/json"), json.get(i)))
                             .build();
                     try {
                         Response response = client.newCall(request2).execute();
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful()) {
                             jsons.add(response.body().string());
                         }
                     } catch (IOException e) {
@@ -46,13 +46,15 @@ public class NetConnection {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        callBack.success(jsons);
+                        if (jsons.size() > 0)
+                            callBack.success(jsons);
                     }
                 });
             }
         }).start();
     }
-    public interface CallBack{
+
+    public interface CallBack {
         void success(List<String> results);
     }
 }

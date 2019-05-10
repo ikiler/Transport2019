@@ -56,6 +56,7 @@ public class RoadStateAnalyseActivity extends AppCompatActivity {
             @Override
             public void onValueSelected(Entry entry, int i, Highlight highlight) {
                 ignore.add(i);
+                getData();
             }
 
             @Override
@@ -95,18 +96,29 @@ public class RoadStateAnalyseActivity extends AppCompatActivity {
                 if (!isRun) return;
                 int n = 0;
                 BarData barData = new BarData();
-                int[] color = {0xff112233, 0xff114433, 0xff115533, 0xff116633, 0xff442233, 0xff992233, 0xff882233};
+                barData.addXValue("周1" );
+                barData.addXValue("周2");
+                barData.addXValue("周3");
+                barData.addXValue("周4");
+                barData.addXValue("周5");
+                barData.addXValue("周6");
+                barData.addXValue("周7" );
+
+                int[] color = {0xff0000ff, 0xff00ff00, 0xffff0000, 0xff778899, 0xff0f0f0f, 0xfff00fff, 0xff112233};
                 List<String> xValues = new ArrayList<>();
                 String[] names = {"学院路", "联想路", "医院路", "幸福路", "环城快速路", "环城高速", "停车场"};
                 List<BarDataSet> dataSets = new ArrayList<>();
                 for (String json : results) {
-                    if (ignore.contains(n))
-                        continue;
                     Gson gson = new Gson();
                     RoadStat roadStat = gson.fromJson(json, RoadStat.class);
                     List<BarEntry> list = new ArrayList<>();
+//                    if (ignore.contains(roadStat.getId()))
+//                        continue;
                     for (int j = 0; j < roadStat.getRoads().size(); j++) {
-                        list.add(new BarEntry(roadStat.getRoads().get(j).getState(), j));
+                        if (ignore.contains(roadStat.getId()))
+                            list.add(new BarEntry(0, j));
+                        else
+                            list.add(new BarEntry(roadStat.getRoads().get(j).getState(), j));
                     }
                     BarDataSet dataSet = new BarDataSet(list, names[roadStat.getId()]);
                     dataSet.setColor(color[n]);
@@ -114,6 +126,7 @@ public class RoadStateAnalyseActivity extends AppCompatActivity {
                     xValues.add("周" + n);
                     dataSets.add(dataSet);
                     barData.addDataSet(dataSet);
+//                    barData.addXValue("周" + n);
                 }
                 barChart.setData(barData);
                 barChart.invalidate();
