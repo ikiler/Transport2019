@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ikiler.transport2019.UI.EX_11;
 import com.example.ikiler.transport2019.UI.EX_3;
 import com.example.ikiler.transport2019.UI.EX_5;
 import com.example.ikiler.transport2019.UI.EX_7;
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, RoadStateAnalyseActivity.class));
                 break;
             case R.id.a2:
-
+                startActivity(new Intent(MainActivity.this, EX_11.class));
                 break;
             case R.id.a3:
 

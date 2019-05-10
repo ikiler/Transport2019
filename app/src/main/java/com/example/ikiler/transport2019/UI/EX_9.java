@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class EX_9 extends AppCompatActivity {
@@ -114,6 +116,7 @@ public class EX_9 extends AppCompatActivity {
             TextView money_his = v.findViewById(R.id.money_his);
             final CheckBox check = v.findViewById(R.id.check);
             Button save = v.findViewById(R.id.save);
+            LinearLayout layout = v.findViewById(R.id.layout);
             car_id.setText(i+1+"");
             car_p.setText("辽A1000"+(i+1));
 
@@ -123,6 +126,9 @@ public class EX_9 extends AppCompatActivity {
                 car_n.setText("李四");
             }else if((i+1) == 3){
                 car_n.setText("王五");
+            }
+            if (Integer.parseInt(sel_money.get(i).toString())<200) {
+                layout.setBackgroundColor(0xffffcc00);
             }
 
             money_his.setText("余额："+sel_money.get(i).toString()+"元");
