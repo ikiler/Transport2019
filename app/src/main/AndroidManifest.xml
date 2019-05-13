@@ -30,7 +30,8 @@
         <activity android:name=".UI.EX_7" />
         <activity android:name=".UI.EX_9" />
         <activity android:name=".UI.EX_11" />
-        <activity android:name=".UI.EX_21"></activity>
+        <activity android:name=".UI.EX_21" />
+        <activity android:name=".UI.EX_22"></activity>
     </application>
 
 </manifest>
