@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ikiler.transport2019.UI.EX_11;
+import com.example.ikiler.transport2019.UI.EX_21;
 import com.example.ikiler.transport2019.UI.EX_3;
 import com.example.ikiler.transport2019.UI.EX_5;
 import com.example.ikiler.transport2019.UI.EX_7;
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, EX_11.class));
                 break;
             case R.id.a3:
-
+                startActivity(new Intent(MainActivity.this, EX_21.class));
                 break;
             case R.id.a4:
 
