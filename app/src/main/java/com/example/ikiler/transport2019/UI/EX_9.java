@@ -151,14 +151,14 @@ public class EX_9 extends AppCompatActivity {
                     final View dia_v = LayoutInflater.from(EX_9.this).inflate(R.layout.ex_9_dialog,null);
                     final TextView car_pai = dia_v.findViewById(R.id.car_p);
                     final EditText ed = dia_v.findViewById(R.id.money);
-                    Button save = dia_v.findViewById(R.id.save);
+                    final Button save = dia_v.findViewById(R.id.save);
                     Button back = dia_v.findViewById(R.id.back);
                     String pai = "";
                     if (car_id_list.size()==0){
                         car_pai.setText("辽A1000"+(i+1)+"    ");
                     }else {
                         for (int i = 0; i < car_id_list.size(); i++) {
-                            pai += "辽A1000" + (Integer.parseInt(car_id_list.get(i).toString())+1) + "    ";
+                            pai += "辽A1000" + (Integer.parseInt(car_id_list.get(i).toString())) + "    ";
                         }
                         car_pai.setText(pai);
                     }
@@ -170,6 +170,8 @@ public class EX_9 extends AppCompatActivity {
                                     if (car_id_list.size()==0){
                                         car_id_list.add(i+1+"");
                                     }
+                                    save_urls.clear();
+                                    save_jsons.clear();
                                     for (int i=0 ; i<car_id_list.size() ; i++){
                                         String url = "http://192.168.139.4:8890/type/jason/action/SetCarAccountRecharge";
                                         String json = "{\"CarId\":"+car_id_list.get(i).toString()+",\"Money\":"+ed.getText().toString()+"}";

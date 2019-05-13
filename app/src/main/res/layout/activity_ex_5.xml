@@ -26,9 +26,9 @@
         android:gravity="center_vertical">
         <LinearLayout
             android:id="@+id/wendu_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">
@@ -50,9 +50,9 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/shidu_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">
@@ -74,9 +74,9 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/sun_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">
@@ -104,9 +104,9 @@
         android:gravity="center_vertical">
         <LinearLayout
             android:id="@+id/co_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">
@@ -128,9 +128,9 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/pm_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">
@@ -152,9 +152,9 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/load_layout"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@android:color/holo_green_light">

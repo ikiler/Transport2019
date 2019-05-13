@@ -29,7 +29,8 @@
         <activity android:name=".UI.EX_5" />
         <activity android:name=".UI.EX_7" />
         <activity android:name=".UI.EX_9" />
-        <activity android:name=".UI.EX_11"></activity>
+        <activity android:name=".UI.EX_11" />
+        <activity android:name=".UI.EX_21"></activity>
     </application>
 
 </manifest>
