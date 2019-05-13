@@ -36,6 +36,7 @@ public class EX_5 extends AppCompatActivity {
     private TextView load;
     List<String> urls = new ArrayList<String>();
     List<String> jsons = new ArrayList<String>();
+    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,8 @@ public class EX_5 extends AppCompatActivity {
         String json2 = "{\"RoadId\":1}";
         jsons.add(json1);
         jsons.add(json2);
-        Timer timer = new Timer();
+
+
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
@@ -70,79 +72,79 @@ public class EX_5 extends AppCompatActivity {
                     public void success(List<String> results) {
                         try {
 
-                            String o1 = results.get(0);
-                            JSONObject jsonObject = new JSONObject(o1);
-                            Log.i("info_o1", o1);
-                            String wendu1 = jsonObject.getString("temperature");
-                            String shidu1 = jsonObject.getString("humidity");
-                            String sun1 = jsonObject.getString("LightIntensity");
-                            String co1 = jsonObject.getString("co2");
-                            String pm1 = jsonObject.getString("pm2.5");
-                            wendu.setText(wendu1);
-                            shidu.setText(shidu1);
-                            sun.setText(sun1);
-                            co.setText(co1);
-                            pm.setText(pm1);
-                            String o2 = results.get(1);
-                            JSONObject jsonObject1 = new JSONObject(o2);
-                            Log.i("info_o2", o2);
-                            String load1 = jsonObject1.getString("Status");
-                            load.setText(load1);
+                                String o1 = results.get(0);
+                                JSONObject jsonObject = new JSONObject(o1);
+                                Log.i("info_o1", o1);
+                                String wendu1 = jsonObject.getString("temperature");
+                                String shidu1 = jsonObject.getString("humidity");
+                                String sun1 = jsonObject.getString("LightIntensity");
+                                String co1 = jsonObject.getString("co2");
+                                String pm1 = jsonObject.getString("pm2.5");
+                                wendu.setText(wendu1);
+                                shidu.setText(shidu1);
+                                sun.setText(sun1);
+                                co.setText(co1);
+                                pm.setText(pm1);
+                                String o2 = results.get(1);
+                                JSONObject jsonObject1 = new JSONObject(o2);
+                                Log.i("info_o2", o2);
+                                String load1 = jsonObject1.getString("Status");
+                                load.setText(load1);
 
 
-                            if (Integer.parseInt(wendu1)>35){
+                                if (Integer.parseInt(wendu1) > 35) {
 
-                                wendu_layout.setBackgroundColor(0xFFFF0000);
+                                    wendu_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                wendu_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    wendu_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            if (Integer.parseInt(shidu1)>1000){
+                                if (Integer.parseInt(shidu1) > 1000) {
 
-                                shidu_layout.setBackgroundColor(0xFFFF0000);
+                                    shidu_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                shidu_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    shidu_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            if (Integer.parseInt(sun1)>1000){
+                                if (Integer.parseInt(sun1) > 1000) {
 
-                                sun_layout.setBackgroundColor(0xFFFF0000);
+                                    sun_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                sun_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    sun_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            if (Integer.parseInt(co1)>1000){
+                                if (Integer.parseInt(co1) > 1000) {
 
-                                co_layout.setBackgroundColor(0xFFFF0000);
+                                    co_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                co_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    co_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            if (Integer.parseInt(pm1)>1000){
+                                if (Integer.parseInt(pm1) > 1000) {
 
-                                pm_layout.setBackgroundColor(0xFFFF0000);
+                                    pm_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                pm_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    pm_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            if (Integer.parseInt(load1)>1000){
+                                if (Integer.parseInt(load1) > 1000) {
 
-                                load_layout.setBackgroundColor(0xFFFF0000);
+                                    load_layout.setBackgroundColor(0xFFFF0000);
 
-                            }else{
-                                load_layout.setBackgroundColor(0xff8bc34a);
-                            }
+                                } else {
+                                    load_layout.setBackgroundColor(0xff8bc34a);
+                                }
 
-                            SQLitLifeNum sqLitLifeNum = new SQLitLifeNum(EX_5.this);
-                            SQLiteDatabase db = sqLitLifeNum.getWritableDatabase();
-                            String sql = "insert into lifeNum values(null,'"+wendu1+"','"+shidu1+"','"+sun1+"','"+co1+"','"+pm1+"','"+load1+"')";
-                            db.execSQL(sql);
-                            Toast.makeText(EX_5.this,"存储成功",Toast.LENGTH_SHORT).show();
+                                SQLitLifeNum sqLitLifeNum = new SQLitLifeNum(EX_5.this);
+                                SQLiteDatabase db = sqLitLifeNum.getWritableDatabase();
+                                String sql = "insert into lifeNum values(null,'" + wendu1 + "','" + shidu1 + "','" + sun1 + "','" + co1 + "','" + pm1 + "','" + load1 + "')";
+                                db.execSQL(sql);
+                                Toast.makeText(EX_5.this, "存储成功", Toast.LENGTH_SHORT).show();
 
 
                         } catch (JSONException e) {
@@ -153,9 +155,13 @@ public class EX_5 extends AppCompatActivity {
             }
         };
 
+        timer.schedule(task, 0, 3 * 1000);
 
-        timer.schedule(task,0,3*1000);
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
     }
 }
