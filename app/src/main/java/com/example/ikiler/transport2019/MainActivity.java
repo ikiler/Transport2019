@@ -22,7 +22,10 @@ import com.example.ikiler.transport2019.UI.EX_3;
 import com.example.ikiler.transport2019.UI.EX_5;
 import com.example.ikiler.transport2019.UI.EX_7;
 import com.example.ikiler.transport2019.UI.EX_9;
+import com.example.ikiler.transport2019.UI.LogSearchActivity;
 import com.example.ikiler.transport2019.UI.RoadStateAnalyseActivity;
+import com.example.ikiler.transport2019.UI.ViolationActivity;
+import com.example.ikiler.transport2019.UI.VlanalyseActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity
     private Button a3;
     private Button a4;
     private Button a5;
+    private Button b1;
+    private Button b2;
+    private Button b3;
+    private Button b4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +136,14 @@ public class MainActivity extends AppCompatActivity
         a3.setOnClickListener(this);
         a4.setOnClickListener(this);
         a5.setOnClickListener(this);
+        b1 = (Button) findViewById(R.id.b1);
+        b1.setOnClickListener(this);
+        b2 = (Button) findViewById(R.id.b2);
+        b2.setOnClickListener(this);
+        b3 = (Button) findViewById(R.id.b3);
+        b3.setOnClickListener(this);
+        b4 = (Button) findViewById(R.id.b4);
+        b4.setOnClickListener(this);
     }
 
     @Override
@@ -148,6 +163,17 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.a5:
 
+                break;
+            case R.id.b1:
+                startActivity(new Intent(MainActivity.this, ViolationActivity.class));
+                break;
+            case R.id.b2:
+                startActivity(new Intent(MainActivity.this, LogSearchActivity.class));
+                break;
+            case R.id.b3:
+                startActivity(new Intent(MainActivity.this, VlanalyseActivity.class));
+                break;
+            case R.id.b4:
                 break;
         }
     }

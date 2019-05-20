@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_co2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/example_picture" />
+
+            <TextView
+                android:id="@+id/tv_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/img_co2"
+                android:text="500ppm"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <ImageView
+                android:id="@+id/img_hum"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/img_co2"
+                android:src="@drawable/example_picture" />
+
+            <TextView
+                android:id="@+id/tv_hum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_co2"
+                android:layout_toRightOf="@id/img_hum"
+                android:text="500ppm"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_pm25"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/example_picture" />
+
+            <TextView
+                android:id="@+id/tv_pm254"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/img_pm25"
+                android:text="500ppm"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <ImageView
+                android:id="@+id/img_light"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/img_pm25"
+                android:src="@drawable/example_picture" />
+
+            <TextView
+                android:id="@+id/tv_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_pm25"
+                android:layout_toRightOf="@id/img_light"
+                android:text="500ppm"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_temp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/example_picture" />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/img_temp"
+            android:text="20"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="2018.02.15"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+    </RelativeLayout>
+</LinearLayout>

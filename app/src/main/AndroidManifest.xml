@@ -30,8 +30,9 @@
         <activity android:name=".UI.EX_7" />
         <activity android:name=".UI.EX_9" />
         <activity android:name=".UI.EX_11" />
-        <activity android:name=".UI.EX_21" />
-        <activity android:name=".UI.EX_22"></activity>
+        <activity android:name=".UI.VlanalyseActivity"></activity>
+        <activity android:name=".UI.ViolationActivity"/>
+        <activity android:name=".UI.LogSearchActivity"/>
     </application>
 
 </manifest>
